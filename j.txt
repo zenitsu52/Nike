@@ -1,0 +1,70 @@
+<div id="timer">
+                <h1>Haland X Nike</h1>
+                
+                <h3 id="time">02:04:16</h3>
+                </div>
+
+
+                 #timer{
+    height:100vh;
+    width:100%;
+    color: white;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: red; */
+    position: absolute;
+    padding-top: 66vh;
+ }
+
+ #timer h3{
+    font-family: rejoy;
+    font-size:8vh;
+    font-weight: 500;
+}
+
+
+ #timer h1{
+    font-family: rejoy;
+    font-size:6vh;
+    font-weight: 500;
+    margin-bottom: -1vh;
+    color:red
+ }
+
+
+const targetDate = new Date("June 31, 2024 23:59:59").getTime();
+  const x = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    // const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("time").innerHTML =   hours + "h: "
+    + minutes + "m: " + seconds + "s ";
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("time").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+//   setInterval()
+
+function page3Animation(){
+    gsap.from("#page3-top h2",{
+        y:120,
+        stagger:0.25,
+        duration:1,
+        scrollTrigger: {
+            trigger: "#page3",
+            scroller: "#main",
+            start: "top 100%",
+            end: "top 37%",
+            // markers: true,
+            scrub: 2
+        }
+    })
+}
+page3Animation()
