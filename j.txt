@@ -1,38 +1,16 @@
 <div id="timer">
-                <h1>Haland X Nike</h1>
+     <h1>Haland X Nike</h1>
+     <h3 id="time">02:04:16</h3>
+</div>
                 
-                <h3 id="time">02:04:16</h3>
-                </div>
 
 
-                 #timer{
-    height:100vh;
-    width:100%;
-    color: white;
-    z-index: 99;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* background-color: red; */
-    position: absolute;
-    padding-top: 66vh;
- }
-
- #timer h3{
-    font-family: rejoy;
-    font-size:8vh;
-    font-weight: 500;
-}
 
 
- #timer h1{
-    font-family: rejoy;
-    font-size:6vh;
-    font-weight: 500;
-    margin-bottom: -1vh;
-    color:red
- }
+
+
+
+
 
 
 const targetDate = new Date("June 31, 2024 23:59:59").getTime();

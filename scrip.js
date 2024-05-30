@@ -179,8 +179,38 @@ tl.to("#loader",{
 })
 
 
+function page3Animation(){
+    gsap.from("#page3-top h2",{
+        y:120,
+        stagger:0.25,
+        duration:1,
+        scrollTrigger: {
+            trigger: "#page3",
+            scroller: "#main",
+            start: "top 100%",
+            end: "top 37%",
+            // markers: true,
+            scrub: 2
+        }
+    })
+}
+page3Animation()
 
-
+const targetDate = new Date("June 31, 2024 23:59:59").getTime();
+  const x = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    // const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("time").innerHTML =   hours + "h: "
+    + minutes + "m: " + seconds + "s ";
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("time").innerHTML = "EXPIRED";
+    }
+  }, 1000);
 
 
 
